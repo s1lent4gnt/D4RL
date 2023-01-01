@@ -32,10 +32,11 @@ class KitchenBase(KitchenTaskRelaxV1, OfflineEnv):
     # these elements appropriately.
     TASK_ELEMENTS = []
     REMOVE_TASKS_WHEN_COMPLETE = True
-    TERMINATE_ON_TASK_COMPLETE = True
+    TERMINATE_ON_TASK_COMPLETE = False
 
     def __init__(self, dataset_url=None, ref_max_score=None, ref_min_score=None, **kwargs):
         self.tasks_to_complete = set(self.TASK_ELEMENTS)
+        self.num_solved = 0
         super(KitchenBase, self).__init__(**kwargs)
         OfflineEnv.__init__(
             self,
@@ -72,9 +73,11 @@ class KitchenBase(KitchenTaskRelaxV1, OfflineEnv):
             complete = distance < BONUS_THRESH
             if complete:
                 completions.append(element)
+                self.num_solved += 1
         if self.REMOVE_TASKS_WHEN_COMPLETE:
             [self.tasks_to_complete.remove(element) for element in completions]
-        bonus = float(len(completions))
+        # bonus = float(len(completions))
+        bonus = float(self.num_solved)
         reward_dict['bonus'] = bonus
         reward_dict['r_total'] = bonus
         score = bonus
