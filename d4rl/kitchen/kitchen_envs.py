@@ -55,6 +55,7 @@ class KitchenBase(KitchenTaskRelaxV1, OfflineEnv):
 
     def reset_model(self):
         self.tasks_to_complete = set(self.TASK_ELEMENTS)
+        self.num_solved = 0
         return super(KitchenBase, self).reset_model()
 
     def _get_reward_n_score(self, obs_dict):
