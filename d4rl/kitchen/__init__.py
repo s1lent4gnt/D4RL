@@ -5,7 +5,7 @@ from gym.envs.registration import register
 register(
     id='kitchen-complete-v0',
     entry_point='d4rl.kitchen:KitchenMicrowaveKettleLightSliderV0',
-    max_episode_steps=280,
+    max_episode_steps=1000,
     kwargs={
         'ref_min_score': 0.0,
         'ref_max_score': 4.0,
@@ -18,7 +18,7 @@ register(
 register(
     id='kitchen-partial-v0',
     entry_point='d4rl.kitchen:KitchenMicrowaveKettleLightSliderV0',
-    max_episode_steps=280,
+    max_episode_steps=1000,
     kwargs={
         'ref_min_score': 0.0,
         'ref_max_score': 4.0,
@@ -32,7 +32,7 @@ register(
 register(
     id='kitchen-mixed-v0',
     entry_point='d4rl.kitchen:KitchenMicrowaveKettleBottomBurnerLightV0',
-    max_episode_steps=280,
+    max_episode_steps=1000,
     kwargs={
         'ref_min_score': 0.0,
         'ref_max_score': 4.0,
