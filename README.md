@@ -1,3 +1,9 @@
+My fork makes the following edits:
+1. consistent reward function for the kitchen environments and their datasets: each step is rewarded with the number of subtasks completed.
+2. incorporates the antmaze-ultra environments
+
+-----------------------------------------------
+
 <p align="center">
     <img src="https://raw.githubusercontent.com/jjshoots/D4RL/master/d4rl-text.png" width="500px"/>
 </p>
