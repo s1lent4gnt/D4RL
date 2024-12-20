@@ -62,12 +62,12 @@ setup(
     install_requires=[
         "gym<0.24.0",
         "numpy",
-        "mujoco_py",
+        "mujoco_py<=3.1.6",
         "pybullet",
         "h5py",
         "termcolor",  # adept_envs dependency
         "click",  # adept_envs dependency
-        "dm_control>=1.0.3",
+        "1.0.3<=dm_control<=1.0.20",
         "mjrl @ git+https://github.com/aravindr93/mjrl@master#egg=mjrl",
     ],
 )
